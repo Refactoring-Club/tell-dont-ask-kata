@@ -2,11 +2,11 @@ import OrderItem from './OrderItem';
 import { OrderStatus } from './OrderStatus';
 
 class Order {
-  private total: number;
-  private currency: string;
-  private items: OrderItem[];
-  private tax: number;
-  private status: OrderStatus;
+  private total: number = 0;
+  private currency: string = 'EUR';
+  private items: OrderItem[] = [];
+  private tax: number = 0;
+  private status: OrderStatus = OrderStatus.CREATED;
   private id: number;
 
   public getTotal(): number {

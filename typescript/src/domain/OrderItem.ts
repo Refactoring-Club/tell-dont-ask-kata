@@ -3,8 +3,6 @@ import Product from './Product';
 class OrderItem {
   private product: Product;
   private quantity: number;
-  private taxedAmount: number;
-  private tax: number;
 
   public getProduct(): Product {
     return this.product;
@@ -23,19 +21,11 @@ class OrderItem {
   }
 
   public getTaxedAmount(): number {
-    return this.taxedAmount;
-  }
-
-  public setTaxedAmount(taxedAmount: number): void {
-    this.taxedAmount = taxedAmount;
+    return this.product.taxedAmount(this.quantity);
   }
 
   public getTax(): number {
-    return this.tax;
-  }
-
-  public setTax(tax: number): void {
-    this.tax = tax;
+    return this.product.taxAmount(this.quantity);
   }
 }
 

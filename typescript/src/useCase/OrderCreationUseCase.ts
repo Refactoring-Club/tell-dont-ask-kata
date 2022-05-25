@@ -1,6 +1,5 @@
 import Order from '../domain/Order';
 import OrderItem from '../domain/OrderItem';
-import { OrderStatus } from '../domain/OrderStatus';
 import Product from '../domain/Product';
 import OrderRepository from '../repository/OrderRepository';
 import { ProductCatalog } from '../repository/ProductCatalog';
@@ -32,8 +31,6 @@ class OrderCreationUseCase {
         const orderItem: OrderItem = new OrderItem();
         orderItem.setProduct(product);
         orderItem.setQuantity(itemRequest.getQuantity());
-        orderItem.setTax(taxAmount);
-        orderItem.setTaxedAmount(taxedAmount);
         order.getItems().push(orderItem);
 
         order.setTotal(order.getTotal() + taxedAmount);

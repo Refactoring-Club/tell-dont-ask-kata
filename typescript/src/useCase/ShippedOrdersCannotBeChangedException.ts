@@ -1,2 +1,2 @@
-export default class ShippedOrdersCannotBeChangedException extends Error {}
+export default class ShippedOrdersCannotBeChangedException extends Error { }
 

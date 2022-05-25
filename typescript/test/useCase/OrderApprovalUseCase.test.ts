@@ -11,17 +11,17 @@ describe('OrderApprovalUseCase', () => {
   let orderRepository: TestOrderRepository;
   let useCase: OrderApprovalUseCase;
 
-  beforeEach( () => {
+  beforeEach(() => {
     orderRepository = new TestOrderRepository();
     useCase = new OrderApprovalUseCase(orderRepository);
   });
   it('approvedExistingOrder', () => {
-    let initialOrder: Order = new Order();
+    const initialOrder: Order = new Order();
     initialOrder.setStatus(OrderStatus.CREATED);
     initialOrder.setId(1);
     orderRepository.addOrder(initialOrder);
 
-    let request: OrderApprovalRequest = new OrderApprovalRequest();
+    const request: OrderApprovalRequest = new OrderApprovalRequest();
     request.setOrderId(1);
     request.setApproved(true);
 
@@ -32,12 +32,12 @@ describe('OrderApprovalUseCase', () => {
   });
 
   it('rejectedExistingOrder', () => {
-    let initialOrder: Order = new Order();
+    const initialOrder: Order = new Order();
     initialOrder.setStatus(OrderStatus.CREATED);
     initialOrder.setId(1);
     orderRepository.addOrder(initialOrder);
 
-    let request: OrderApprovalRequest = new OrderApprovalRequest();
+    const request: OrderApprovalRequest = new OrderApprovalRequest();
     request.setOrderId(1);
     request.setApproved(false);
 
@@ -71,7 +71,7 @@ describe('OrderApprovalUseCase', () => {
     request.setOrderId(1);
     request.setApproved(false);
 
-    expect(() =>  useCase.run(request)).toThrow(ApprovedOrderCannotBeRejectedException);
+    expect(() => useCase.run(request)).toThrow(ApprovedOrderCannotBeRejectedException);
     expect(orderRepository.getSavedOrder()).toBe(null);
   });
 
@@ -90,12 +90,12 @@ describe('OrderApprovalUseCase', () => {
   });
 
   it('shippedOrdersCannotBeRejected', () => {
-    let initialOrder: Order = new Order();
+    const initialOrder: Order = new Order();
     initialOrder.setStatus(OrderStatus.SHIPPED);
     initialOrder.setId(1);
     orderRepository.addOrder(initialOrder);
 
-    let request: OrderApprovalRequest = new OrderApprovalRequest();
+    const request: OrderApprovalRequest = new OrderApprovalRequest();
     request.setOrderId(1);
     request.setApproved(false);
 

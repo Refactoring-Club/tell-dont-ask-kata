@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "devDependencies": {
     "@types/node": "^12.12",

@@ -10,7 +10,7 @@ class OrderShipmentUseCase {
   private readonly orderRepository: OrderRepository;
   private readonly shipmentService: ShipmentService;
 
-  public constructor (orderRepository: OrderRepository, shipmentService: ShipmentService) {
+  public constructor(orderRepository: OrderRepository, shipmentService: ShipmentService) {
     this.orderRepository = orderRepository;
     this.shipmentService = shipmentService;
   }

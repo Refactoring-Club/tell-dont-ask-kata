@@ -1,2 +1,2 @@
-export default class UnknownProductException extends Error {}
+export default class UnknownProductException extends Error { }
 

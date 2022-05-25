@@ -1,1 +1,1 @@
-export default class OrderCannotBeShippedException extends Error {}
+export default class OrderCannotBeShippedException extends Error { }

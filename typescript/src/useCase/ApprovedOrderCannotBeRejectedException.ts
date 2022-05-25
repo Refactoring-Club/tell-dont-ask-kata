@@ -1,1 +1,1 @@
-export default class ApprovedOrderCannotBeRejectedException extends Error {}
+export default class ApprovedOrderCannotBeRejectedException extends Error { }

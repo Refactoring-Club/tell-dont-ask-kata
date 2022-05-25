@@ -2,7 +2,7 @@ class OrderApprovalRequest {
   private orderId: number;
   private approved: boolean;
 
-  public  setOrderId(orderId: number): void {
+  public setOrderId(orderId: number): void {
     this.orderId = orderId;
   }
 
@@ -14,7 +14,7 @@ class OrderApprovalRequest {
     this.approved = approved;
   }
 
-  public isApproved(): boolean{
+  public isApproved(): boolean {
     return this.approved;
   }
 }

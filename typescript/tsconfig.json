@@ -15,7 +15,5 @@
     "emitDecoratorMetadata": false,
     "resolveJsonModule": true
   },
-  "include": [
-    "./**/*"
-  ],
+  "include": ["./**/*"]
 }

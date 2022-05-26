@@ -15,16 +15,8 @@ class Order {
     return this.currency;
   }
 
-  public setCurrency(currency: string): void {
-    this.currency = currency;
-  }
-
   public getItems(): OrderItem[] {
     return this.items;
-  }
-
-  public setItems(items: OrderItem[]): void {
-    this.items = items;
   }
 
   public getTax(): number {

@@ -2,19 +2,13 @@ import OrderItem from './OrderItem';
 import { OrderStatus } from './OrderStatus';
 
 class Order {
-  private total: number = 0;
   private currency: string = 'EUR';
   private items: OrderItem[] = [];
-  private tax: number = 0;
   private status: OrderStatus = OrderStatus.CREATED;
   private id: number;
 
   public getTotal(): number {
-    return this.items.reduce((orderTotal, orderItem) => orderTotal + orderItem.getTaxedAmount(), this.total);
-  }
-
-  public setTotal(total: number): void {
-    this.total = total;
+    return this.items.reduce((orderTotal, orderItem) => orderTotal + orderItem.getTaxedAmount(), 0);
   }
 
   public getCurrency(): string {
@@ -34,11 +28,7 @@ class Order {
   }
 
   public getTax(): number {
-    return this.tax;
-  }
-
-  public setTax(tax: number): void {
-    this.tax = tax;
+    return this.items.reduce((orderTotal, orderItem) => orderTotal + orderItem.getTax(), 0);
   }
 
   public getStatus(): OrderStatus {

@@ -25,12 +25,8 @@ class OrderCreationUseCase {
         throw new UnknownProductException();
       }
       else {
-        const taxAmount: number = product.taxAmount(itemRequest.getQuantity());
-
         const orderItem: OrderItem = new OrderItem(product, itemRequest.getQuantity());
         order.getItems().push(orderItem);
-
-        order.setTax(order.getTax() + taxAmount);
       }
     }
 

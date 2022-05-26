@@ -10,7 +10,7 @@ class Order {
   private id: number;
 
   public getTotal(): number {
-    return this.total;
+    return this.items.reduce((orderTotal, orderItem) => orderTotal + orderItem.getTaxedAmount(), this.total);
   }
 
   public setTotal(total: number): void {

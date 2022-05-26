@@ -4,20 +4,17 @@ class OrderItem {
   private product: Product;
   private quantity: number;
 
+  public constructor(product: Product, quantity: number) {
+    this.product = product;
+    this.quantity = quantity;
+  }
+
   public getProduct(): Product {
     return this.product;
   }
 
-  public setProduct(product: Product): void {
-    this.product = product;
-  }
-
   public getQuantity(): number {
     return this.quantity;
-  }
-
-  public setQuantity(quantity: number): void {
-    this.quantity = quantity;
   }
 
   public getTaxedAmount(): number {

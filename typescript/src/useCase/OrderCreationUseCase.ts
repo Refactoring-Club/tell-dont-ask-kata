@@ -28,9 +28,7 @@ class OrderCreationUseCase {
         const taxedAmount: number = product.taxedAmount(itemRequest.getQuantity());
         const taxAmount: number = product.taxAmount(itemRequest.getQuantity());
 
-        const orderItem: OrderItem = new OrderItem();
-        orderItem.setProduct(product);
-        orderItem.setQuantity(itemRequest.getQuantity());
+        const orderItem: OrderItem = new OrderItem(product, itemRequest.getQuantity());
         order.getItems().push(orderItem);
 
         order.setTotal(order.getTotal() + taxedAmount);

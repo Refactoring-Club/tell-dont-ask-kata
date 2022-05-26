@@ -46,6 +46,10 @@ class Order {
   public setId(id: number): void {
     this.id = id;
   }
+
+  public addItem(item: OrderItem): void {
+    this.items.push(item);
+  }
 }
 
 export default Order;

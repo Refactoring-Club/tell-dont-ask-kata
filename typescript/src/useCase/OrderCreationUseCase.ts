@@ -26,7 +26,7 @@ class OrderCreationUseCase {
       }
       else {
         const orderItem: OrderItem = new OrderItem(product, itemRequest.getQuantity());
-        order.getItems().push(orderItem);
+        order.addItem(orderItem);
       }
     }
 
